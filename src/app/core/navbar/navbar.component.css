@@ -1,0 +1,65 @@
+/* Navbar background */
+.navbar {
+    background-color: #212529;
+  }
+  
+  /* Navbar links & icons */
+  .navbar .nav-link,
+  .navbar .nav-link i,
+  .navbar-brand i {
+    color: #ffffff !important;
+  }
+  
+  /* Hover effect */
+  .navbar .nav-link:hover {
+    color: #f8f9fa !important;
+  }
+  
+  /* Dropdown menu */
+  .dropdown-menu {
+    min-width: 160px;
+    background-color: #fff;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .dropdown-item {
+    color: #333 !important;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Search Box Styling */
+  .search-form {
+    max-width: 300px;
+  }
+  
+  .input-group .form-control {
+    border-radius: 0.25rem 0 0 0.25rem;
+  }
+  
+  .input-group .btn {
+    border-radius: 0 0.25rem 0.25rem 0;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  
+  /* Icons Spacing */
+  .material-icons {
+    vertical-align: middle;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .search-form {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+  
+    .search-form .input-group {
+      width: 100%;
+    }
+  }
