@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-
+  visible=false;
+ToggleDropDown(){
+this.visible=!this.visible
+}
 }

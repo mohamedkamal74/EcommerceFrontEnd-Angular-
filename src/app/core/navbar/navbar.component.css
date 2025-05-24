@@ -49,6 +49,12 @@
   /* Icons Spacing */
   .material-icons {
     vertical-align: middle;
+    color: chocolate;
+  }
+
+  .nav-item:hover{
+   color: hotpink;
+  transform: scale(1.2);
   }
   
   /* Responsive adjustments */
