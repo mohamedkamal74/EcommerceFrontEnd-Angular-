@@ -1,52 +1,62 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-dark">
-    <div class="container">
-      <a routerLink="/" class="navbar-brand text-white">
-        <img src="" class="logo" alt="">
-        <i>E-commerce</i>
-      </a>
-  
-      <!-- Toggler for mobile view -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-  
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item"><a routerLink="/" class="nav-link text-white">Home</a></li>
-          <li class="nav-item"><a href="" class="nav-link text-white">Shopping</a></li>
-          <li class="nav-item"><a href="" class="nav-link text-white">Best Seller</a></li>
-          <li class="nav-item"><a href="" class="nav-link text-white">About Us</a></li>
-        </ul>
-  
-        <!-- Search Form -->
-        <form class="form-inline my-2 my-lg-0 mx-auto search-form">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search...">
-            <div class="input-group-append">
-              <button class="btn btn-light" type="submit">
-                <i class="material-icons">search</i>
-              </button>
-            </div>
-          </div>
-        </form>
-  
-        <!-- Right side nav items -->
-        <ul class="navbar-nav ml-auto align-items-center">
-          <li class="nav-item"><a href="" class="nav-link text-white">
-            <i class="material-icons">shopping_cart</i>
-          </a></li>
-          <li class="nav-item dropdown">
-            <a (click)="ToggleDropDown()" class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
-               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <i class="material-icons">account_circle</i>
-            </a>
-            <div [ngClass]="{'show':visible}" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Register <i class="fa fa-user-plus"></i></a>
-              <a class="dropdown-item" href="#">Login <i class="fa fa-sign-in"></i></a>
-              <a class="dropdown-item" href="#">My Orders <i class="fa fa-list"></i></a>
-            </div>
-          </li>
-        </ul>
-      </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark shadow-sm sticky-top">
+  <div class="container">
+    <!-- Logo -->
+    <a routerLink="/" class="navbar-brand text-white d-flex align-items-center">
+      <i class="fa fa-shopping-bag fa-lg me-2" style="color: #ffc107;"></i>
+      <span><i>E-commerce</i></span>
+    </a>
+
+    <!-- Mobile Toggle Button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Links -->
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a routerLink="/" class="nav-link text-white">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link text-white">Shopping</a></li>
+        <li class="nav-item"><a href="#" class="nav-link text-white">Best Seller</a></li>
+        <li class="nav-item"><a href="#" class="nav-link text-white">About Us</a></li>
+      </ul>
+
+      <!-- Search Form -->
+      <form class="d-flex mx-auto my-2 my-lg-0 search-form w-50">
+        <div class="input-group w-100">
+          <input type="text" class="form-control rounded-start" placeholder="Search products...">
+          <button class="btn btn-primary rounded-end" type="submit">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </form>
+
+      <!-- Right Side Icons -->
+      <ul class="navbar-nav ms-auto d-flex align-items-center">
+        <!-- Cart Icon -->
+        <li class="nav-item me-3">
+          <a href="#" class="nav-link text-white position-relative">
+            <i class="fa fa-shopping-cart fa-lg"></i>
+            <span class="badge bg-danger position-absolute top-0 start-100 translate-middle">3</span>
+          </a>
+        </li>
+
+        <!-- User Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" (click)="ToggleDropDown()" href="#" id="navbarDropdown" role="button"
+             data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fa fa-user-circle-o fa-lg"></i>
+          </a>
+          <ul [ngClass]="{'show':visible}" class="dropdown-menu dropdown-menu-end animate slideIn mt-2" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#"><i class="fa fa-user-plus me-2"></i>Register</a></li>
+            <li><a class="dropdown-item" href="#"><i class="fa fa-sign-in me-2"></i>Login</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#"><i class="fa fa-list me-2"></i>My Orders</a></li>
+          </ul>
+
+          
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>

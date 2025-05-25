@@ -1,71 +1,61 @@
-/* Navbar background */
-.navbar {
-    background-color: #212529;
-  }
-  
-  /* Navbar links & icons */
-  .navbar .nav-link,
-  .navbar .nav-link i,
-  .navbar-brand i {
-    color: #ffffff !important;
-  }
-  
-  /* Hover effect */
-  .navbar .nav-link:hover {
-    color: #f8f9fa !important;
-  }
-  
-  /* Dropdown menu */
-  .dropdown-menu {
-    min-width: 160px;
-    background-color: #fff;
-    border: none;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-  
-  .dropdown-item {
-    color: #333 !important;
-  }
-  
-  .dropdown-item:hover {
-    background-color: #f1f1f1;
-  }
-  
-  /* Search Box Styling */
+/* Navbar Brand */
+.navbar-brand i {
+  font-style: normal;
+  color: #ffc107;
+}
+
+/* Link Hover Effects */
+.navbar .nav-link {
+  transition: all 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  color: #f8f9fa !important;
+  transform: scale(1.05);
+}
+
+/* Search Box Styling */
+.search-form .form-control {
+  border-radius: 0.5rem 0 0 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.search-form .btn {
+  border-radius: 0 0.5rem 0.5rem 0;
+  background-color: #0d6efd;
+}
+
+.search-form .btn:hover {
+  background-color: #0b5ed7;
+}
+
+/* Shopping Cart Badge */
+.badge {
+  font-size: 0.65rem;
+  padding: 0.3em 0.5em;
+}
+
+/* Dropdown Animation */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.dropdown-menu.animate {
+  animation: slideIn 0.2s ease-out;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
   .search-form {
-    max-width: 300px;
-  }
-  
-  .input-group .form-control {
-    border-radius: 0.25rem 0 0 0.25rem;
-  }
-  
-  .input-group .btn {
-    border-radius: 0 0.25rem 0.25rem 0;
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-  
-  /* Icons Spacing */
-  .material-icons {
-    vertical-align: middle;
-    color: chocolate;
+    width: 100%;
+    margin-bottom: 10px;
   }
 
-  .nav-item:hover{
-   color: hotpink;
-  transform: scale(1.2);
+  .search-form .input-group {
+    width: 100%;
   }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .search-form {
-      margin-top: 10px;
-      margin-bottom: 10px;
-      width: 100%;
-    }
-  
-    .search-form .input-group {
-      width: 100%;
-    }
+
+  .nav-item.me-3 {
+    margin-right: 0 !important;
   }
+}

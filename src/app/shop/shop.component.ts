@@ -7,12 +7,12 @@ import { IProduct } from '../shared/Models/Product';
   selector: 'app-shop',
   standalone: false,
   templateUrl: './shop.component.html',
-  styleUrl: './shop.component.sass'
+  styleUrl: './shop.component.css'
 })
 export class ShopComponent implements OnInit{
   constructor(private shopService:ShopService){}
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+   this.getAllProducts();
   }
 products:IProduct[]
   getAllProducts(){
