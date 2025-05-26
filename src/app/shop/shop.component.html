@@ -53,49 +53,11 @@
             </div>
             <!-- Your product cards or grid goes here -->
             <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="card product-card shadow-sm border-0 rounded">
-                        <!-- Main Image -->
-                        <div class="main-image-container position-relative">
-                            <img src="https://via.placeholder.com/300x300 " class="card-img-top main-image"
-                                alt="Product Image">
-                            <span class="badge bg-danger position-absolute top-0 end-0 mt-2 me-2">Sale</span>
-                        </div>
-
-                        <!-- Thumbnail Images -->
-                        <div class="thumbnail-gallery d-flex justify-content-center gap-2 p-3">
-                            <img src="https://via.placeholder.com/60x60 " class="thumbnail-img rounded"
-                                alt="Thumbnail 1">
-                            <img src="https://via.placeholder.com/60x60 " class="thumbnail-img rounded"
-                                alt="Thumbnail 2">
-                            <img src="https://via.placeholder.com/60x60 " class="thumbnail-img rounded"
-                                alt="Thumbnail 3">
-                        </div>
-
-                        <!-- Product Title -->
-                        <div class="card-body text-center">
-                            <h5 class="card-title mb-2">Wireless Bluetooth Headphones</h5>
-
-                            <!-- Prices -->
-                            <div class="prices mb-3">
-                                <del class="text-muted me-2">$99.99</del>
-                                <span class="text-primary fs-5 fw-bold">$79.99</span>
-                            </div>
-
-                            <!-- Buttons -->
-                            <div class="d-grid gap-2 d-flex justify-content-between">
-                                <button class="btn btn-primary">
-                                    <i class="fa fa-shopping-cart"></i>
-                                    <span>Add to Cart</span>
-                                </button>
-                                <button class="btn btn-outline-secondary">
-                                   <i class="fa fa-info-circle"></i>
-                                    <span>Details</span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    @for (item of products; track $index) {
+                    <ng-container>
+                        <app-shop-item class="col-lg-4 col-md-6" [product]="item"></app-shop-item>
+                    </ng-container>
+                    }
             </div>
 
         </div>
