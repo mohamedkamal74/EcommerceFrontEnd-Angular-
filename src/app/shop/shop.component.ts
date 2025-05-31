@@ -19,7 +19,7 @@ export class ShopComponent implements OnInit{
 //Get Products
 products:IProduct[]
   getAllProducts(){
-  this.shopService.getProducts().subscribe({
+  this.shopService.getProducts(this.CategoryId,this.SortSelected).subscribe({
     next:((value:IPagination)=>{
 this.products=value.data;
     })
@@ -28,6 +28,7 @@ this.products=value.data;
 
   // Get Categories
 Categories:ICategory []
+CategoryId:number
   getAllCategories(){
  this.shopService.getCategories().subscribe({
     next:((value)=>{
@@ -36,5 +37,23 @@ console.log(this.Categories);
   })
 
 });
+}
+
+selectedId(categoryId:number){
+  this.CategoryId=categoryId;
+  this.getAllProducts();
+}
+
+//Sorting Price
+SortingOptions=[
+  {name:"Price",value:'Name'},
+  {name:"Price:min-max",value:'PriceAce'},
+  {name:"Price:max-min",value:'PriceDce'}
+]
+
+SortSelected:string
+SortingByPrice(sort:Event){
+this.SortSelected=(sort.target as HTMLInputElement).value;
+this.getAllProducts();
 }
 }
