@@ -1,7 +1,7 @@
 <div class="card product-card shadow-sm border-0 rounded">
     <!-- Main Image -->
     <div class="main-image-container position-relative">
-        <img src="https://via.placeholder.com/300x300 " class="card-img-top main-image" alt="Product Image">
+        <img src="https://localhost:44347/{{product.photos[0].imageName}}" class="card-img-top main-image" alt="Product Image">
     </div>
 
     <!-- Thumbnail Images -->
@@ -21,7 +21,7 @@
         <!-- Prices -->
         <div class="prices mb-3">
             <del class="text-danger me-2">{{product.oldPrice |currency}}</del>
-            <span class="text-primary fs-5 fw-bold">{{product.oldPrice |currency}}</span>
+            <span class="text-primary fs-5 fw-bold">{{product.newPrice |currency}}</span>
         </div>
         <!-- Rating -->
         <div class="mb-3">

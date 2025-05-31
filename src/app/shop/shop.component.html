@@ -19,15 +19,11 @@
                 <!-- Categories Section -->
                 <h4 class="section-title border-bottom pb-2 mb-3">Categories</h4>
                 <ul class="list-group custom-category-list">
+                    @for (item of Categories; track $index) {
                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                        laptop
+                        {{item.name}}
                     </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        phone
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        watch
-                    </li>
+                    }
                 </ul>
 
             </div>
@@ -53,11 +49,11 @@
             </div>
             <!-- Your product cards or grid goes here -->
             <div class="row g-4">
-                    @for (item of products; track $index) {
-                    <ng-container>
-                        <app-shop-item class="col-lg-4 col-md-6" [product]="item"></app-shop-item>
-                    </ng-container>
-                    }
+                @for (item of products; track $index) {
+                <ng-container>
+                    <app-shop-item class="col-lg-4 col-md-6" [product]="item"></app-shop-item>
+                </ng-container>
+                }
             </div>
 
         </div>
