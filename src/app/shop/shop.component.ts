@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import { ShopService } from './shop.service';
 import { IPagination } from '../shared/Models/Pagination';
 import { IProduct } from '../shared/Models/Product';
@@ -19,7 +19,7 @@ export class ShopComponent implements OnInit{
 //Get Products
 products:IProduct[]
   getAllProducts(){
-  this.shopService.getProducts(this.CategoryId,this.SortSelected).subscribe({
+  this.shopService.getProducts(this.CategoryId,this.SortSelected,this.Search).subscribe({
     next:((value:IPagination)=>{
 this.products=value.data;
     })
@@ -56,4 +56,26 @@ SortingByPrice(sort:Event){
 this.SortSelected=(sort.target as HTMLInputElement).value;
 this.getAllProducts();
 }
+
+//Filtering by word
+Search:string
+OnSearch(search:string){
+  this.Search=search;
+  this.getAllProducts();
+}
+
+@ViewChild('Search') SearchInput: ElementRef;
+@ViewChild('SortSelected') Selected: ElementRef;
+// Reset All vaues
+OnReset(){
+  this.Search=''
+  this.SortSelected=''
+  this.CategoryId=0
+
+  this.SearchInput.nativeElement.value = '';
+  this.Selected.nativeElement.selectedIndex = 0 ;
+
+  this.getAllProducts()
+}
+
 }

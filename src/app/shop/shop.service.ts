@@ -10,7 +10,7 @@ export class ShopService {
   baseURL='https://localhost:44347/api/';
 
   constructor(private httpClient:HttpClient) { }
-   getProducts(CategoryId?:number,SortSelected?:string){
+   getProducts(CategoryId?:number,SortSelected?:string,Search?:string){
     let param=new HttpParams();
     if(CategoryId){
       param=param.append("categoryId",CategoryId);
@@ -18,8 +18,12 @@ export class ShopService {
     if(SortSelected){
       param=param.append("sort",SortSelected);
     }
+    if(Search){
+    param=param.append("search",Search);
+   }
     return this.httpClient.get<IPagination>(this.baseURL+"Products/getAll",{params:param});
    }
+   
    getCategories(){
     return this.httpClient.get<ICategory[]>(this.baseURL+"Categories/getAll");
    }

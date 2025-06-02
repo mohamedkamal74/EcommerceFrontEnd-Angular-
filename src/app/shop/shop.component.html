@@ -9,7 +9,7 @@
                 <!-- Sorting Section -->
                 <h4 class="section-title border-bottom pb-2 mb-3">Sort By</h4>
                 <div class="custom-select-wrapper mb-4">
-                    <select class="form-select shadow-none" (change)="SortingByPrice($event)">
+                    <select #SortSelected class="form-select shadow-none" (change)="SortingByPrice($event)">
                         @for (item of SortingOptions; track $index) {
                         <option [value]="item.value">{{item.name}}</option>
                     }
@@ -34,16 +34,16 @@
             <div class="search-container d-flex flex-wrap align-items-center gap-2 p-3 bg-light rounded shadow-sm">
                 <!-- Search Input -->
                 <div class="flex-grow-1">
-                    <input type="text" class="form-control" placeholder="Search products...">
+                    <input #Search (keyup)="OnSearch(Search.value)" (keyup.enter)="OnSearch(Search.value)" type="text" class="form-control" placeholder="Search products...">
                 </div>
 
                 <!-- Search Button -->
-                <button class="btn btn-primary d-flex align-items-center gap-1">
+                <button (click)="OnSearch(Search.value)"  class="btn btn-primary d-flex align-items-center gap-1">
                     <i class="fa fa-search"></i> Search
                 </button>
 
                 <!-- Reset Button -->
-                <button class="btn btn-outline-secondary d-flex align-items-center gap-1">
+                <button (click)="OnReset()" class="btn btn-outline-secondary d-flex align-items-center gap-1">
                     <i class="fa fa-refresh"></i> Reset
                 </button>
             </div>
@@ -55,7 +55,7 @@
                 </ng-container>
                 }
             </div>
-
+<pagination [totalItems]="30"></pagination>
         </div>
     </div>
 </div>
