@@ -20,7 +20,7 @@
                 <h4 class="section-title border-bottom pb-2 mb-3">Categories</h4>
                 <ul class="list-group custom-category-list">
                     @for (item of Categories; track $index) {
-                    <li [class.active]="item.id==CategoryId" (click)="selectedId(item.id)" class="list-group-item d-flex justify-content-between align-items-center">
+                    <li [class.active]="item.id==ProductParam.CategoryId" (click)="selectedId(item.id)" class="list-group-item d-flex justify-content-between align-items-center">
                         {{item.name}}
                     </li>
                     }
@@ -55,7 +55,14 @@
                 </ng-container>
                 }
             </div>
-<pagination [totalItems]="30"></pagination>
+            <div class="d-flex justify-content-center align-items-center mt-5">
+              <pagination 
+              [itemsPerPage]="2" 
+              [totalItems]="TotalCount"
+              (pageChanged)="OnChangePage($event.page)"
+              [boundaryLinks]="true">
+            </pagination>
+            </div>
         </div>
     </div>
 </div>
