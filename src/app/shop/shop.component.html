@@ -12,7 +12,7 @@
                     <select #SortSelected class="form-select shadow-none" (change)="SortingByPrice($event)">
                         @for (item of SortingOptions; track $index) {
                         <option [value]="item.value">{{item.name}}</option>
-                    }
+                        }
                     </select>
                 </div>
 
@@ -20,7 +20,8 @@
                 <h4 class="section-title border-bottom pb-2 mb-3">Categories</h4>
                 <ul class="list-group custom-category-list">
                     @for (item of Categories; track $index) {
-                    <li [class.active]="item.id==ProductParam.CategoryId" (click)="selectedId(item.id)" class="list-group-item d-flex justify-content-between align-items-center">
+                    <li [class.active]="item.id==ProductParam.CategoryId" (click)="selectedId(item.id)"
+                        class="list-group-item d-flex justify-content-between align-items-center">
                         {{item.name}}
                     </li>
                     }
@@ -31,14 +32,19 @@
 
         <!-- Products will go here -->
         <div class="col-md-9">
+            <div class="row d-flex justify-content-center align-items-center mb-1">
+                <span class="text-dark">Showing {{products.length}} Of
+                    {{ProductParam.PageNumber*ProductParam.PageSize}}</span>
+            </div>
             <div class="search-container d-flex flex-wrap align-items-center gap-2 p-3 bg-light rounded shadow-sm">
                 <!-- Search Input -->
                 <div class="flex-grow-1">
-                    <input #Search (keyup)="OnSearch(Search.value)" (keyup.enter)="OnSearch(Search.value)" type="text" class="form-control" placeholder="Search products...">
+                    <input #Search (keyup)="OnSearch(Search.value)" (keyup.enter)="OnSearch(Search.value)" type="text"
+                        class="form-control" placeholder="Search products...">
                 </div>
 
                 <!-- Search Button -->
-                <button (click)="OnSearch(Search.value)"  class="btn btn-primary d-flex align-items-center gap-1">
+                <button (click)="OnSearch(Search.value)" class="btn btn-primary d-flex align-items-center gap-1">
                     <i class="fa fa-search"></i> Search
                 </button>
 
@@ -56,12 +62,9 @@
                 }
             </div>
             <div class="d-flex justify-content-center align-items-center mt-5">
-              <pagination 
-              [itemsPerPage]="2" 
-              [totalItems]="TotalCount"
-              (pageChanged)="OnChangePage($event.page)"
-              [boundaryLinks]="true">
-            </pagination>
+                <app-pagination [PageSize]="ProductParam.PageSize" [TotalCount]="TotalCount"
+                    (PageChanged)="OnChangePage($event)">
+                </app-pagination>
             </div>
         </div>
     </div>
