@@ -13,6 +13,11 @@
   color: #f8f9fa !important;
   transform: scale(1.05);
 }
+.active{
+  color: #f8f9fa !important;
+  transform: scale(1.05);
+  color: brown !important;
+}
 
 /* Search Box Styling */
 .search-form .form-control {

@@ -1,0 +1,26 @@
+import { Component, OnInit } from '@angular/core';
+import { ShopService } from '../shop.service';
+import { IProduct } from '../../shared/Models/Product';
+import { ActivatedRoute } from '@angular/router';
+
+@Component({
+  selector: 'app-product-details',
+  standalone: false,
+  templateUrl: './product-details.component.html',
+  styleUrl: './product-details.component.sass'
+})
+export class ProductDetailsComponent implements OnInit{
+product:IProduct
+  constructor(private shopservice:ShopService,private route:ActivatedRoute){}
+  ngOnInit(): void {
+  }
+
+  loadProduct(){
+    this.shopservice.getProductDetails(parseInt(this.route.snapshot.paramMap.get('id')))
+    .subscribe({
+      next:((value:IProduct)=>{
+        this.product=value
+      })
+    })
+  }
+}

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { IPagination } from '../shared/Models/Pagination';
 import { ICategory } from '../shared/Models/Category';
 import { ProductParam } from '../shared/Models/ProductParam';
+import { IProduct } from '../shared/Models/Product';
 
 @Injectable({
   providedIn: 'root'
@@ -31,4 +32,10 @@ export class ShopService {
    getCategories(){
     return this.httpClient.get<ICategory[]>(this.baseURL+"Categories/getAll");
    }
+
+   getProductDetails(id:number){
+    return this.httpClient.get<IProduct[]>(this.baseURL+"Products/getById"+id);
+
+   }
+
   }
