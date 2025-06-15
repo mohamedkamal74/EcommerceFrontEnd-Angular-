@@ -34,7 +34,7 @@ export class ShopService {
    }
 
    getProductDetails(id:number){
-    return this.httpClient.get<IProduct[]>(this.baseURL+"Products/getById"+id);
+    return this.httpClient.get<IProduct>(this.baseURL+"Products/getById/"+id);
 
    }
 

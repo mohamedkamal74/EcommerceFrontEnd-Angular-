@@ -1,3 +1,4 @@
+@if(products){
 <div class="container mt-5">
     <div class="row">
         <h1 class="main-title text-center mb-4">Shopping</h1>
@@ -33,6 +34,7 @@
         <!-- Products will go here -->
         <div class="col-md-9">
             <div class="row d-flex justify-content-center align-items-center mb-1">
+
                 <span class="text-dark">Showing {{products.length}} Of
                     {{ProductParam.PageNumber*ProductParam.PageSize}}</span>
             </div>
@@ -69,3 +71,4 @@
         </div>
     </div>
 </div>
+}
