@@ -5,6 +5,9 @@
     transition: transform 0.3s ease;
 }
 
+::ng-deep .ngxImageZoomContainer >img{
+    max-width: 300px;
+}
 /* Thumbnails hover effect */
 .pr2eviews img {
     cursor: pointer;
@@ -18,7 +21,7 @@
 
 /* Buttons */
 .custom-btn {
-    background-color: #212529;
+    background-color: #f86c0f;
     color: white;
     border-radius: 5px;
     padding: 10px 20px;

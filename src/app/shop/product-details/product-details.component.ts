@@ -19,13 +19,20 @@ export class ProductDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.loadProduct();
   }
+
+  mainImage: string;
   loadProduct() {
     this.shopservice
       .getProductDetails(parseInt(this.route.snapshot.paramMap.get('id')))
       .subscribe({
         next: (value: IProduct) => {
           this.product = value;
+          this.mainImage = this.product.photos[0].imageName;
         },
       });
+  }
+
+  replaceImage(imageSrc: string) {
+    this.mainImage = imageSrc;
   }
 }
