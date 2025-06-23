@@ -4,10 +4,10 @@ import { BrowserModule, provideClientHydration, withEventReplay } from '@angular
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import { SharedModule } from './shared/shared.module';
 import { provideHttpClient } from '@angular/common/http';
-import { ShopModule } from './shop/shop.module';
 import { HomeComponent } from './home/home.component';
+import { HomeModule } from './home/home.module';
+import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
   declarations: [
@@ -18,7 +18,9 @@ import { HomeComponent } from './home/home.component';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    ShopModule
+    HomeModule,
+    NgxSpinnerModule
+    
   ],
   providers: [
     provideClientHydration(withEventReplay()),
