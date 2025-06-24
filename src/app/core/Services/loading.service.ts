@@ -8,6 +8,8 @@ export class LoadingService {
   requestCount = 0;
   constructor(private service: NgxSpinnerService) {}
   loading() {
+    this.requestCount++;
+
     this.service.show(undefined, {
       bdColor: 'rgba(0,0,0,0.8)',
       size: 'large',
@@ -18,6 +20,8 @@ export class LoadingService {
   }
 
   hideLoader() {
+    this.requestCount--;
+
     if (this.requestCount <= 0) {
       this.requestCount = 0;
       this.service.hide();
