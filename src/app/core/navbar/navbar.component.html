@@ -36,7 +36,7 @@
       <ul class="navbar-nav ms-auto d-flex align-items-center">
         <!-- Cart Icon -->
         <li class="nav-item me-3">
-          <a href="#" class="nav-link text-white position-relative">
+          <a routerLink="/basket" class="nav-link text-white position-relative">
             <i class="fa fa-shopping-cart fa-lg"></i>
             <span class="badge bg-danger position-absolute top-0 start-100 translate-middle">3</span>
           </a>
@@ -47,7 +47,7 @@
           <a class="nav-link dropdown-toggle text-white" (click)="ToggleDropDown()" href="#" id="navbarDropdown" role="button"
              data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fa fa-user-circle-o fa-lg"></i>
-          </a>
+          </a> 
           <ul [ngClass]="{'show':visible}" class="dropdown-menu dropdown-menu-end animate slideIn mt-2" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#"><i class="fa fa-user-plus me-2"></i>Register</a></li>
             <li><a class="dropdown-item" href="#"><i class="fa fa-sign-in me-2"></i>Login</a></li>

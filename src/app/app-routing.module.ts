@@ -10,6 +10,10 @@ const routes: Routes = [
     path:'shop'
     ,loadChildren:()=>import('./shop/shop.module').then(s=>s.ShopModule)
   },
+  {
+    path:'basket'
+    ,loadChildren:()=>import('./basket/basket.module').then(s=>s.BasketModule)
+  },
   {path:'**',redirectTo:'',pathMatch:'full'}
 ];
 
